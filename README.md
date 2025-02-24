@@ -44,9 +44,6 @@ Falls `pip` nicht erkannt wird, versuche:
 ```sh
 python -m pip install nextcord pynacl
 ```
-bot.run(TOKEN)
-```
-
 ---
 
 ## 📌 4. Bot als Windows-Dienst mit NSSM einrichten
