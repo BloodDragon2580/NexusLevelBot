@@ -44,12 +44,44 @@ Falls `pip` nicht erkannt wird, versuche:
 ```sh
 python -m pip install nextcord pynacl
 ```
+bot.run(TOKEN)
+```
+
 ---
 
-## 📌 3. Bot starten  
-Öffne das Terminal im Verzeichnis, wo sich `bot.py` befindet, und starte den Bot mit:  
+## 📌 4. Bot als Windows-Dienst mit NSSM einrichten
+
+1. Lade [NSSM](https://nssm.cc/download) herunter und entpacke es.  
+2. Öffne eine **Eingabeaufforderung mit Administratorrechten**.  
+3. Wechsle in den NSSM-Ordner und installiere den Dienst mit folgendem Befehl (Dienstname **NexusLevelBot**):
+
+   ```sh
+   nssm install NexusLevelBot
+   ```
+
+4. Im erscheinenden Fenster:
+   - Setze den **Pfad zur Python-Exe** (z.B. `C:\Python39\python.exe`)
+   - Setze als **Argumente** den Pfad zu deiner `bot.py` (z.B. `C:\Pfad\zu\deinem\bot.py`)
+   - Optional: Gib einen Startordner an, falls benötigt
+5. Klicke auf **"Install Service"**.  
+6. Starte den Dienst mit:
+
+   ```sh
+   nssm start NexusLevelBot
+   ```
+
+Der Bot läuft nun dauerhaft im Hintergrund als Windows-Dienst!
+
+---
+
+## 📌 5. Bot starten (ohne NSSM)
+
+Falls du den Bot manuell starten möchtest, öffne das Terminal im Verzeichnis, in dem sich `bot.py` befindet, und führe aus:
+
 ```sh
 python bot.py
 ```
+
+---
 
 Falls du Fragen hast oder Erweiterungen möchtest, sag einfach Bescheid!
