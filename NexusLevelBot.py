@@ -63,7 +63,7 @@ async def on_message(message):
     if level_up:
         channel = bot.get_channel(LEVEL_UP_CHANNEL_ID)
         if channel:
-            await channel.send(f"🎉 {message.author.mention} hat Level {level_up} erreicht! 🎉")
+            await channel.send(f"🎉 Glückwunsch {message.author.mention}! Du hast nun das Level {level_up} erreicht! 🎉")
 
 # XP-Verlust bei Inaktivität (wird jede Stunde überprüft)
 @tasks.loop(hours=1)
