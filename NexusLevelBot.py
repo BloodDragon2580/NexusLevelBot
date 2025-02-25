@@ -9,7 +9,6 @@ TOKEN = "DEIN_BOT_TOKEN"
 GUILD_ID = 123456789012345678  # Ersetze mit deiner Server-ID
 LEVEL_UP_CHANNEL_ID = 123456789012345678  # ID des Channels für Level-Up-Nachrichten
 XP_PER_MESSAGE = 5
-XP_PER_VOICE_MINUTE = 2
 XP_PER_LEVEL = 20
 MAX_LEVEL = 100
 XP_LOSS_PERCENTAGE = 0.1  # 10% XP-Verlust nach Inaktivität
@@ -66,13 +65,6 @@ async def on_message(message):
         if channel:
             await channel.send(f"🎉 {message.author.mention} hat Level {level_up} erreicht! 🎉")
 
-# Sprachkanal-XP
-@bot.event
-async def on_voice_state_update(member, before, after):
-    if not before.channel and after.channel:
-        add_xp(member.id, XP_PER_VOICE_MINUTE)
-        save_data(xp_data)
-
 # XP-Verlust bei Inaktivität (wird jede Stunde überprüft)
 @tasks.loop(hours=1)
 async def check_inactivity():
@@ -114,7 +106,6 @@ async def check_level(interaction: nextcord.Interaction):
 async def info(interaction: nextcord.Interaction):
     embed = nextcord.Embed(title="📜 XP & Level System Infos", color=nextcord.Color.blue())
     embed.add_field(name="📩 XP pro Nachricht", value=f"{XP_PER_MESSAGE} XP", inline=False)
-    embed.add_field(name="🎙 XP pro Minute im Sprachkanal", value=f"{XP_PER_VOICE_MINUTE} XP", inline=False)
     embed.add_field(name="🎯 XP für ein Level-Up", value=f"{XP_PER_LEVEL} XP", inline=False)
     embed.add_field(name="📉 XP-Verlust bei Inaktivität", value=f"{int(XP_LOSS_PERCENTAGE * 100)}% nach 7 Tagen", inline=False)
     embed.add_field(name="🔝 Maximales Level", value=f"{MAX_LEVEL}", inline=False)
