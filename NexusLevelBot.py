@@ -49,15 +49,28 @@ def add_xp(user_id, amount):
         return new_level
     return None
 
-# Nachricht-XP
+# Nachricht-XP mit Anti-Spam-Schutz
+user_last_message = {}  # Speichert die letzte Nachricht jedes Nutzers
+
 @bot.event
 async def on_message(message):
     if message.author.bot:
         return
 
+    # Anti-Spam-Schutz: Prüft, ob die Nachricht fast identisch zur letzten ist oder zu kurz
+    user_id = message.author.id
+    content = message.content.strip().lower()
+
+    if user_id in user_last_message:
+        last_content, last_time = user_last_message[user_id]
+        if content == last_content or len(content) < 5 or time.time() - last_time < 5:
+            return  # Kein XP für Spam-Nachrichten oder sehr kurze Nachrichten
+
+    user_last_message[user_id] = (content, time.time())  # Letzte Nachricht speichern
+
     await bot.process_commands(message)  # Befehle zuerst verarbeiten
 
-    level_up = add_xp(message.author.id, XP_PER_MESSAGE)
+    level_up = add_xp(user_id, XP_PER_MESSAGE)
     save_data(xp_data)
 
     if level_up:
@@ -136,7 +149,7 @@ async def botinfo(interaction: nextcord.Interaction):
     embed.add_field(
         name="📌 Funktionen",
         value=(
-            "- Vergibt XP für Nachrichten und Sprachaktivität\n"
+            "- Vergibt XP für Nachrichten mit Anti-Spam-Schutz\n"
             "- Levelaufstiege mit Benachrichtigung\n"
             "- XP-Verlust bei Inaktivität (nach 7 Tagen)\n"
             "- Leaderboard mit den Top 10 Spielern\n"
