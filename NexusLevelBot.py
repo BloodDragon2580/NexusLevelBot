@@ -30,13 +30,8 @@ def save_data(data):
 
 xp_data = load_data()
 
-# Bot-Instanz mit Intents
-intents = nextcord.Intents.default()
-intents.messages = True
-intents.guilds = True
-intents.message_content = True
-intents.voice_states = True
-
+# Bot-Instanz mit vollständigen Intents
+intents = nextcord.Intents.all()
 bot = commands.Bot(intents=intents)
 
 # XP hinzufügen & letzte Aktivität speichern
@@ -61,6 +56,8 @@ async def on_message(message):
     if message.author.bot:
         return
 
+    await bot.process_commands(message)  # Befehle zuerst verarbeiten
+
     level_up = add_xp(message.author.id, XP_PER_MESSAGE)
     save_data(xp_data)
 
@@ -68,7 +65,6 @@ async def on_message(message):
         channel = bot.get_channel(LEVEL_UP_CHANNEL_ID)
         if channel:
             await channel.send(f"🎉 {message.author.mention} hat Level {level_up} erreicht! 🎉")
-    await bot.process_commands(message)
 
 # Sprachkanal-XP
 @bot.event
@@ -122,7 +118,6 @@ async def info(interaction: nextcord.Interaction):
     embed.add_field(name="🎯 XP für ein Level-Up", value=f"{XP_PER_LEVEL} XP", inline=False)
     embed.add_field(name="📉 XP-Verlust bei Inaktivität", value=f"{int(XP_LOSS_PERCENTAGE * 100)}% nach 7 Tagen", inline=False)
     embed.add_field(name="🔝 Maximales Level", value=f"{MAX_LEVEL}", inline=False)
-    
     embed.set_footer(text="© Nexus Gaming | Viel Spaß beim Sammeln von XP!")
     await interaction.response.send_message(embed=embed)
 
@@ -135,7 +130,6 @@ async def leaderboard(interaction: nextcord.Interaction):
 
     # Sortiere die Nutzer nach XP (absteigend)
     sorted_users = sorted(xp_data.items(), key=lambda x: x[1]["xp"], reverse=True)[:10]
-
     embed = nextcord.Embed(title="🏆 XP Leaderboard", color=nextcord.Color.gold())
 
     for rank, (user_id, data) in enumerate(sorted_users, start=1):
@@ -143,13 +137,11 @@ async def leaderboard(interaction: nextcord.Interaction):
         embed.add_field(name=f"#{rank} {user.name}", value=f"🆙 Level {data['level']} | ⭐ {data['xp']} XP", inline=False)
 
     embed.set_footer(text="© Nexus Gaming | Wer wird die Nummer 1?")
-
     await interaction.response.send_message(embed=embed)
 
 @bot.slash_command(name="botinfo", description="Zeigt alle Funktionen und Befehle des Bots.", guild_ids=[GUILD_ID])
 async def botinfo(interaction: nextcord.Interaction):
     embed = nextcord.Embed(title="🤖 NexusLevelBot - Info", color=nextcord.Color.blue())
-    
     embed.add_field(
         name="📌 Funktionen",
         value=(
@@ -161,7 +153,6 @@ async def botinfo(interaction: nextcord.Interaction):
         ),
         inline=False
     )
-
     embed.add_field(
         name="⚡ Befehle",
         value=(
@@ -172,9 +163,7 @@ async def botinfo(interaction: nextcord.Interaction):
         ),
         inline=False
     )
-
     embed.set_footer(text="© Nexus Gaming | Viel Spaß beim Leveln! 🚀")
-
     await interaction.response.send_message(embed=embed)
 
 # Bot starten
