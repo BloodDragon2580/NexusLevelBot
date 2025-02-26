@@ -1,0 +1,798 @@
+[
+    {
+        "question": "Was ist die Hauptstadt von Deutschland?",
+        "answers": ["Berlin", "München", "Hamburg", "Köln"],
+        "correct": 0
+    },
+    {
+        "question": "Welches Element hat das chemische Symbol 'O'?",
+        "answers": ["Osmium", "Ozon", "Oxid", "Sauerstoff"],
+        "correct": 3
+    },
+    {
+        "question": "Welcher Planet ist der größte in unserem Sonnensystem?",
+        "answers": ["Erde", "Mars", "Jupiter", "Venus"],
+        "correct": 2
+    },
+    {
+        "question": "Wie viele Kontinente gibt es auf der Erde?",
+        "answers": ["5", "6", "7", "8"],
+        "correct": 2
+    },
+    {
+        "question": "Wer schrieb das Theaterstück 'Faust'?",
+        "answers": ["Friedrich Schiller", "Johann Wolfgang von Goethe", "Heinrich Heine", "Thomas Mann"],
+        "correct": 1
+    },
+    {
+        "question": "Welches Tier ist das größte lebende Säugetier?",
+        "answers": ["Elefant", "Blauwal", "Giraffe", "Nashorn"],
+        "correct": 1
+    },
+    {
+        "question": "In welchem Jahr fiel die Berliner Mauer?",
+        "answers": ["1985", "1989", "1991", "1979"],
+        "correct": 1
+    },
+    {
+        "question": "Welches ist das chemische Symbol für Gold?",
+        "answers": ["Au", "Ag", "Fe", "Pb"],
+        "correct": 0
+    },
+    {
+        "question": "Wie viele Farben hat der Regenbogen?",
+        "answers": ["5", "6", "7", "8"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher berühmte Physiker entwickelte die Relativitätstheorie?",
+        "answers": ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Galileo Galilei"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Sprache hat die meisten Muttersprachler weltweit?",
+        "answers": ["Englisch", "Spanisch", "Chinesisch", "Hindi"],
+        "correct": 2
+    },
+    {
+        "question": "Welches ist das längste Fluss-System der Welt?",
+        "answers": ["Nil", "Amazonas", "Jangtse", "Mississippi"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist die Hauptstadt von Frankreich?",
+        "answers": ["Paris", "Lyon", "Marseille", "Bordeaux"],
+        "correct": 0
+    },
+    {
+        "question": "Welches ist das größte Land der Welt?",
+        "answers": ["USA", "Russland", "China", "Kanada"],
+        "correct": 1
+    },
+    {
+        "question": "Wie viele Planeten gibt es in unserem Sonnensystem?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 1
+    },
+    {
+        "question": "Welches Tier legt Eier, ist aber ein Säugetier?",
+        "answers": ["Känguru", "Schnabeltier", "Koala", "Fledermaus"],
+        "correct": 1
+    },
+    {
+        "question": "Wer malte die Mona Lisa?",
+        "answers": ["Michelangelo", "Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"],
+        "correct": 3
+    },
+    {
+        "question": "Welcher Kontinent hat die meisten Länder?",
+        "answers": ["Europa", "Afrika", "Asien", "Südamerika"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Farbe hat Chlorophyll?",
+        "answers": ["Rot", "Blau", "Grün", "Gelb"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist die höchste Spielkarte in einem Standarddeck?",
+        "answers": ["König", "Dame", "Ass", "Bube"],
+        "correct": 2
+    },
+    {
+        "question": "Welche deutsche Stadt ist für das Oktoberfest bekannt?",
+        "answers": ["Berlin", "Hamburg", "München", "Frankfurt"],
+        "correct": 2
+    },
+    {
+        "question": "Wie viele Beine hat eine Spinne?",
+        "answers": ["6", "8", "10", "12"],
+        "correct": 1
+    },
+    {
+        "question": "Wer entdeckte die Schwerkraft?",
+        "answers": ["Galileo Galilei", "Nikola Tesla", "Isaac Newton", "Albert Einstein"],
+        "correct": 2
+    },
+    {
+        "question": "Wie viele Bundesländer hat Deutschland?",
+        "answers": ["14", "15", "16", "17"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Planet ist bekannt als der rote Planet?",
+        "answers": ["Venus", "Mars", "Jupiter", "Saturn"],
+        "correct": 1
+    },
+    {
+        "question": "Welches ist das schnellste Landtier?",
+        "answers": ["Gepard", "Löwe", "Antilope", "Falke"],
+        "correct": 0
+    },
+    {
+        "question": "Wie viele Ozeane gibt es auf der Erde?",
+        "answers": ["3", "4", "5", "6"],
+        "correct": 2
+    },
+    {
+        "question": "Welches chemische Element hat das Symbol 'H'?",
+        "answers": ["Helium", "Hydrogen (Wasserstoff)", "Holmium", "Hafnium"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist die Hauptstadt von Spanien?",
+        "answers": ["Madrid", "Barcelona", "Sevilla", "Valencia"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Planet hat die meisten Monde?",
+        "answers": ["Jupiter", "Saturn", "Uranus", "Neptun"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Farbe hat ein reifer Kürbis normalerweise?",
+        "answers": ["Rot", "Grün", "Orange", "Gelb"],
+        "correct": 2
+    },
+    {
+        "question": "Welches ist das meistgesprochene Wort der Welt?",
+        "answers": ["Hallo", "Okay", "Danke", "Ja"],
+        "correct": 1
+    },
+    {
+        "question": "Wie viele Herzen hat ein Oktopus?",
+        "answers": ["1", "2", "3", "4"],
+        "correct": 2
+    },
+    {
+        "question": "Welches Instrument hat 88 Tasten?",
+        "answers": ["Gitarre", "Klavier", "Saxophon", "Violine"],
+        "correct": 1
+    },
+    {
+        "question": "Wie nennt man die Wissenschaft der Kartenherstellung?",
+        "answers": ["Geographie", "Topographie", "Kartographie", "Graphologie"],
+        "correct": 2
+    },
+    {
+        "question": "Welches Tier ist das Symbol für Frieden?",
+        "answers": ["Adler", "Taube", "Löwe", "Elefant"],
+        "correct": 1
+    },
+    {
+        "question": "Wie heißt das längste Gebirge der Welt?",
+        "answers": ["Rocky Mountains", "Himalaya", "Anden", "Alpen"],
+        "correct": 2
+    },
+    {
+        "question": "Welche ist die häufigste Blutgruppe?",
+        "answers": ["A", "B", "AB", "0"],
+        "correct": 3
+    },
+    {
+        "question": "Welche Frucht ist für ihre Samen an der Außenseite bekannt?",
+        "answers": ["Apfel", "Kirsche", "Erdbeere", "Pfirsich"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher ist der heißeste Planet in unserem Sonnensystem?",
+        "answers": ["Merkur", "Venus", "Mars", "Jupiter"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Sportart wird mit einem Shuttlecock gespielt?",
+        "answers": ["Tennis", "Badminton", "Squash", "Volleyball"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Krieg dauerte von 1939 bis 1945?",
+        "answers": ["Erster Weltkrieg", "Zweiter Weltkrieg", "Kalter Krieg", "Vietnamkrieg"],
+        "correct": 1
+    },
+    {
+        "question": "Wie heißt der Hauptcharakter in 'Der König der Löwen'?",
+        "answers": ["Simba", "Mufasa", "Timon", "Pumbaa"],
+        "correct": 0
+    },
+    {
+        "question": "Welche Farbe hat Cinderellas Kleid auf dem Ball?",
+        "answers": ["Blau", "Rosa", "Gelb", "Weiß"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Disney-Bösewicht verwandelt sich in einen riesigen Drachen?",
+        "answers": ["Ursula", "Maleficent", "Jafar", "Scar"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist der Name des Chamäleons in 'Rapunzel – Neu verföhnt'?",
+        "answers": ["Pascal", "Flit", "Maximus", "Olaf"],
+        "correct": 0
+    },
+    {
+        "question": "In welchem Jahr wurde der erste 'Toy Story'-Film veröffentlicht?",
+        "answers": ["1995", "2000", "1998", "1993"],
+        "correct": 0
+    },
+    {
+        "question": "Wie heißt das Königreich, in dem Elsa und Anna leben?",
+        "answers": ["DunBroch", "Corona", "Arendelle", "Atlantis"],
+        "correct": 2
+    },
+    {
+        "question": "Welches Tier ist Balu in 'Das Dschungelbuch'?",
+        "answers": ["Tiger", "Bär", "Elefant", "Schlange"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Disney-Film handelt von einer jungen Frau, die sich als Mann verkleidet, um in die Armee zu gehen?",
+        "answers": ["Pocahontas", "Mulan", "Merida", "Elsa"],
+        "correct": 1
+    },
+    {
+        "question": "Wie viele Schwestern hat Arielle in 'Arielle, die Meerjungfrau'?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 3
+    },
+    {
+        "question": "Welcher Disney-Bösewicht hält Rapunzel in einem Turm gefangen?",
+        "answers": ["Lady Tremaine", "Mother Gothel", "Maleficent", "Cruella de Vil"],
+        "correct": 1
+    },
+    {
+        "question": "Was verliert Cinderella auf der Treppe, als sie vom Ball flieht?",
+        "answers": ["Ihre Krone", "Ihre Halskette", "Ihren Schuh", "Ihren Ohrring"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt das Biest in 'Die Schöne und das Biest' wirklich?",
+        "answers": ["Eric", "Adam", "Phillip", "Edward"],
+        "correct": 1
+    },
+    {
+        "question": "Welches magische Wort benutzt Aladdin, um die Wunderhöhle zu betreten?",
+        "answers": ["Sesam öffne dich", "Hokus Pokus", "Offene Höhle", "Kommando Licht"],
+        "correct": 0
+    },
+    {
+        "question": "Wie heißt der treue Papagei von Dschafar?",
+        "answers": ["Iago", "Abu", "Zazu", "Heihei"],
+        "correct": 0
+    },
+    {
+        "question": "Welches Instrument spielt Sebastian in 'Arielle, die Meerjungfrau'?",
+        "answers": ["Violine", "Gitarre", "Flöte", "Keines, er singt nur"],
+        "correct": 3
+    },
+    {
+        "question": "Was ist der Name des Antagonisten in 'Der Glöckner von Notre Dame'?",
+        "answers": ["Gaston", "Frollo", "Scar", "Hades"],
+        "correct": 1
+    },
+    {
+        "question": "Wer ist der Sidekick von Hercules?",
+        "answers": ["Phil", "Zeus", "Hades", "Megara"],
+        "correct": 0
+    },
+    {
+        "question": "In welchem Film sagt der Charakter 'Ohana bedeutet Familie'?",
+        "answers": ["Lilo & Stitch", "Tarzan", "Mulan", "Ratatouille"],
+        "correct": 0
+    },
+    {
+        "question": "Was ist die erste Verwandlung, die Dschinni Aladdin anbietet?",
+        "answers": ["Prinz", "Kamel", "Schneider", "Affe"],
+        "correct": 1
+    },
+    {
+        "question": "Welches Tier ist Kuzco, nachdem er verzaubert wurde?",
+        "answers": ["Lama", "Esel", "Hund", "Ziege"],
+        "correct": 0
+    },
+    {
+        "question": "Wie heißt der Cowboy in 'Toy Story'?",
+        "answers": ["Buzz", "Andy", "Woody", "Rex"],
+        "correct": 2
+    },
+    {
+        "question": "Wie nennt Lightning McQueen seinen besten Freund?",
+        "answers": ["Doc", "Sally", "Mack", "Hook"],
+        "correct": 3
+    },
+    {
+        "question": "Welche Stadt besucht Remy in 'Ratatouille'?",
+        "answers": ["London", "Rom", "Paris", "Berlin"],
+        "correct": 2
+    },
+    {
+        "question": "Wie viele Wünsche hat Aladdin von Dschinni?",
+        "answers": ["2", "3", "4", "5"],
+        "correct": 1
+    },
+    {
+        "question": "Was für ein Tier ist Scar aus 'Der König der Löwen'?",
+        "answers": ["Leopard", "Tiger", "Löwe", "Gepard"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Disney-Prinz hat den Namen 'Eric'?",
+        "answers": ["Cinderellas Prinz", "Arielles Prinz", "Belles Prinz", "Schneewittchens Prinz"],
+        "correct": 1
+    },
+    {
+        "question": "Welches Symbol befindet sich auf dem Kuchen, den Mulan ihrer Großmutter bringt?",
+        "answers": ["Sonne", "Drache", "Pfirsich", "Yin-Yang"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt der Bösewicht in '101 Dalmatiner'?",
+        "answers": ["Captain Hook", "Cruella de Vil", "Ursula", "Jafar"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist der Name von Arielles Vater?",
+        "answers": ["König Arthur", "König Triton", "König Poseidon", "König Zeus"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Künstler hat den Hit 'Shape of You' veröffentlicht?",
+        "answers": ["Ed Sheeran", "Justin Bieber", "Shawn Mendes", "The Weeknd"],
+        "correct": 0
+    },
+    {
+        "question": "Welche Band sang den Song 'Bohemian Rhapsody'?",
+        "answers": ["The Beatles", "Queen", "Led Zeppelin", "The Rolling Stones"],
+        "correct": 1
+    },
+    {
+        "question": "Wer ist bekannt als der 'King of Pop'?",
+        "answers": ["Elvis Presley", "Michael Jackson", "Prince", "Madonna"],
+        "correct": 1
+    },
+    {
+        "question": "Wie heißt das Debütalbum von Billie Eilish?",
+        "answers": [
+            "Happier Than Ever",
+            "Don't Smile at Me",
+            "When We All Fall Asleep, Where Do We Go?",
+            "Bad Guy"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "Welche Sängerin ist bekannt für den Hit 'Rolling in the Deep'?",
+        "answers": ["Adele", "Taylor Swift", "Beyoncé", "Lana Del Rey"],
+        "correct": 0
+    },
+    {
+        "question": "Wie lautet der richtige Name von Lady Gaga?",
+        "answers": ["Stefani Joanne Angelina Germanotta", "Robyn Rihanna Fenty", "Alicia Beth Moore", "Katheryn Elizabeth Hudson"],
+        "correct": 0
+    },
+    {
+        "question": "Welche Band hat den Song 'Smells Like Teen Spirit' veröffentlicht?",
+        "answers": ["Nirvana", "Foo Fighters", "Metallica", "Green Day"],
+        "correct": 0
+    },
+    {
+        "question": "Welches Instrument spielt Elton John hauptsächlich?",
+        "answers": ["Gitarre", "Schlagzeug", "Klavier", "Geige"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Künstler hatte den ersten Super Bowl Halftime Show-Auftritt als Solo-Act?",
+        "answers": ["Michael Jackson", "Prince", "Madonna", "Beyoncé"],
+        "correct": 0
+    },
+    {
+        "question": "Wie heißt das Musikfestival, das 1969 stattfand und als legendär gilt?",
+        "answers": ["Coachella", "Glastonbury", "Lollapalooza", "Woodstock"],
+        "correct": 3
+    },
+    {
+        "question": "Wer war die Leadsängerin der Band 'No Doubt'?",
+        "answers": ["Avril Lavigne", "Gwen Stefani", "Shakira", "P!nk"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Rapper hat den Song 'Sicko Mode' veröffentlicht?",
+        "answers": ["Drake", "Travis Scott", "Kanye West", "Lil Uzi Vert"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Sänger ist für das Lied 'Purple Rain' bekannt?",
+        "answers": ["Prince", "David Bowie", "Freddie Mercury", "Elton John"],
+        "correct": 0
+    },
+    {
+        "question": "Welche Band ist für das Album 'Dark Side of the Moon' bekannt?",
+        "answers": ["The Rolling Stones", "Pink Floyd", "Led Zeppelin", "The Doors"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Song von Whitney Houston wurde zum meistverkauften Song einer Sängerin?",
+        "answers": ["I Wanna Dance with Somebody", "How Will I Know", "I Will Always Love You", "Greatest Love of All"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Musiker ist für den Hit 'Uptown Funk' bekannt?",
+        "answers": ["Bruno Mars", "Justin Timberlake", "Pharrell Williams", "The Weeknd"],
+        "correct": 0
+    },
+    {
+        "question": "Welche Farbe beschreibt ein berühmtes Lied von Eiffel 65?",
+        "answers": ["Rot", "Blau", "Grün", "Gelb"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Künstler hat den Song 'Take Me to Church' veröffentlicht?",
+        "answers": ["Sam Smith", "Hozier", "James Arthur", "Lewis Capaldi"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Girlgroup wurde in den 1990ern mit 'Wannabe' berühmt?",
+        "answers": ["Destiny's Child", "Spice Girls", "TLC", "All Saints"],
+        "correct": 1
+    },
+    {
+        "question": "Wer war der erste Gewinner von 'Deutschland sucht den Superstar'?",
+        "answers": ["Mark Medlock", "Pietro Lombardi", "Alexander Klaws", "Daniel Küblböck"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher DJ ist bekannt für Hits wie 'Wake Me Up' und 'Levels'?",
+        "answers": ["Calvin Harris", "Avicii", "David Guetta", "Kygo"],
+        "correct": 1
+    },
+    {
+        "question": "Welche Sängerin hatte 2023 mit 'Flowers' einen weltweiten Hit?",
+        "answers": ["Miley Cyrus", "Ariana Grande", "Dua Lipa", "Rihanna"],
+        "correct": 0
+    },
+    {
+        "question": "Welches Musikinstrument hat Jimi Hendrix berühmt gemacht?",
+        "answers": ["Klavier", "Schlagzeug", "Gitarre", "Saxophon"],
+        "correct": 2
+    },
+    {
+        "question": "Welche Band veröffentlichte das Lied 'Hotel California'?",
+        "answers": ["The Rolling Stones", "The Eagles", "Fleetwood Mac", "The Doors"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher deutsche Musiker ist bekannt für das Lied 'Marmor, Stein und Eisen bricht'?",
+        "answers": ["Udo Jürgens", "Heino", "Drafi Deutscher", "Peter Maffay"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher klassische Komponist schrieb die 'Mondscheinsonate'?",
+        "answers": ["Mozart", "Beethoven", "Bach", "Chopin"],
+        "correct": 1
+    },
+    {
+        "question": "In welchem Land wurde die Band 'ABBA' gegründet?",
+        "answers": ["Norwegen", "Dänemark", "Schweden", "Finnland"],
+        "correct": 2
+    },
+    {
+        "question": "Wer hat das Lied 'Poker Face' gesungen?",
+        "answers": ["Lady Gaga", "Katy Perry", "Madonna", "Britney Spears"],
+        "correct": 0
+    },
+    {
+        "question": "Welches Instrument spielt Louis Armstrong?",
+        "answers": ["Gitarre", "Trompete", "Klavier", "Saxophon"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Film war der erste, der einen Oscar für den besten Film gewann?",
+        "answers": ["Vom Winde verweht", "Casablanca", "Wings", "Citizen Kane"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Schauspieler spielt Jack Dawson in 'Titanic'?",
+        "answers": ["Brad Pitt", "Leonardo DiCaprio", "Johnny Depp", "Tom Cruise"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Film hat weltweit das höchste Einspielergebnis aller Zeiten (Stand 2024)?",
+        "answers": ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: Das Erwachen der Macht"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Regisseur ist bekannt für Filme wie 'Inception', 'Interstellar' und 'Dunkirk'?",
+        "answers": ["Steven Spielberg", "Quentin Tarantino", "Christopher Nolan", "James Cameron"],
+        "correct": 2
+    },
+    {
+        "question": "Wie lautet der berühmte Satz aus 'Casablanca': 'Ich schau dir in die...'?",
+        "answers": ["Augen, Kleines", "Seele, Liebes", "Herz, mein Schatz", "Träume, Engel"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Schauspieler hat in den meisten James-Bond-Filmen die Hauptrolle gespielt?",
+        "answers": ["Sean Connery", "Daniel Craig", "Roger Moore", "Pierce Brosnan"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Horrorfilm basiert auf dem Roman von Stephen King und spielt in einem Hotel?",
+        "answers": ["Es", "Shining", "Friedhof der Kuscheltiere", "Carrie"],
+        "correct": 1
+    },
+    {
+        "question": "Wie heißt der Schauspieler, der den Joker in 'The Dark Knight' gespielt hat?",
+        "answers": ["Joaquin Phoenix", "Heath Ledger", "Jack Nicholson", "Jared Leto"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Film wurde als erster vollständig animierter Spielfilm veröffentlicht?",
+        "answers": ["Bambi", "Dumbo", "Schneewittchen und die sieben Zwerge", "Cinderella"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt der Planet, auf dem der Großteil von 'Avatar' spielt?",
+        "answers": ["Tatooine", "Naboo", "Pandora", "Endor"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt der Hauptcharakter in 'Die Matrix'?",
+        "answers": ["Neo", "Morpheus", "Agent Smith", "Trinity"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher deutsche Film gewann 2007 den Oscar als bester fremdsprachiger Film?",
+        "answers": ["Das Leben der Anderen", "Good Bye, Lenin!", "Der Untergang", "Die Welle"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Film hat den berühmten Satz: 'Ich bin dein Vater'?",
+        "answers": ["Star Wars: Eine neue Hoffnung", "Star Wars: Das Imperium schlägt zurück", "Star Wars: Die Rückkehr der Jedi-Ritter", "Star Wars: Die dunkle Bedrohung"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Schauspieler ist bekannt für seine Rolle als 'Indiana Jones'?",
+        "answers": ["Tom Hanks", "Bruce Willis", "Harrison Ford", "Mel Gibson"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt das Zauberinternat in den Harry-Potter-Filmen?",
+        "answers": ["Beauxbatons", "Hogwarts", "Durmstrang", "Ilvermorny"],
+        "correct": 1
+    },
+    {
+        "question": "In welchem Jahr wurde 'Der Herr der Ringe: Die Rückkehr des Königs' veröffentlicht?",
+        "answers": ["2001", "2002", "2003", "2004"],
+        "correct": 2
+    },
+    {
+        "question": "Wie heißt das Auto in 'Zurück in die Zukunft'?",
+        "answers": ["Delorean", "Mustang", "Camaro", "Tesla"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Disney-Film hat den Song 'Let It Go' bekannt gemacht?",
+        "answers": ["Rapunzel – Neu verföhnt", "Die Eiskönigin", "Vaiana", "Coco"],
+        "correct": 1
+    },
+    {
+        "question": "Wer hat die Hauptrolle in 'Forrest Gump' gespielt?",
+        "answers": ["Leonardo DiCaprio", "Tom Cruise", "Tom Hanks", "Brad Pitt"],
+        "correct": 2
+    },
+    {
+        "question": "Wie lautet der Name des Bösewichts in 'Der König der Löwen'?",
+        "answers": ["Scar", "Mufasa", "Shere Khan", "Hades"],
+        "correct": 0
+    },
+    {
+        "question": "Welcher Film mit Johnny Depp basiert auf einer Disney-Attraktion?",
+        "answers": ["Fluch der Karibik", "Alice im Wunderland", "Charlie und die Schokoladenfabrik", "Edward mit den Scherenhänden"],
+        "correct": 0
+    },
+    {
+        "question": "Wie heißt der Regisseur von 'Pulp Fiction'?",
+        "answers": ["Martin Scorsese", "Christopher Nolan", "Quentin Tarantino", "Ridley Scott"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Film spielt größtenteils auf einem riesigen Luxusdampfer?",
+        "answers": ["Poseidon", "Titanic", "Speed 2", "Captain Phillips"],
+        "correct": 1
+    },
+    {
+        "question": "Wer spielte die Hauptrolle in 'The Wolf of Wall Street'?",
+        "answers": ["Tom Hardy", "Brad Pitt", "Leonardo DiCaprio", "Christian Bale"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Film erzählt die Geschichte von Tony Montana?",
+        "answers": ["Goodfellas", "Scarface", "Der Pate", "Heat"],
+        "correct": 1
+    },
+    {
+        "question": "Wie heißt der Roboter aus 'Wall-E'?",
+        "answers": ["EVE", "R2-D2", "Wall-E", "BB-8"],
+        "correct": 2
+    },
+    {
+        "question": "Welcher Film basiert auf der Geschichte von Schachspieler Bobby Fischer?",
+        "answers": ["The Queen's Gambit", "Searching for Bobby Fischer", "The Imitation Game", "A Beautiful Mind"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Film basiert auf dem Roman 'Der große Gatsby'?",
+        "answers": ["Catch Me If You Can", "The Great Gatsby", "Revolutionary Road", "Moulin Rouge!"],
+        "correct": 1
+    },
+    {
+        "question": "Welcher Film von Studio Ghibli erzählt die Geschichte eines Mädchens, das in eine Zauberwelt gerät?",
+        "answers": ["Mein Nachbar Totoro", "Chihiros Reise ins Zauberland", "Prinzessin Mononoke", "Das wandelnde Schloss"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 5 + 3?",
+        "answers": ["7", "8", "9", "6"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 10 - 4?",
+        "answers": ["5", "6", "7", "4"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 6 × 2?",
+        "answers": ["12", "10", "8", "14"],
+        "correct": 0
+    },
+    {
+        "question": "Was ist 15 ÷ 3?",
+        "answers": ["3", "4", "5", "6"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 9 + 7?",
+        "answers": ["15", "16", "17", "18"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 8 - 5?",
+        "answers": ["2", "3", "4", "5"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 4 × 3?",
+        "answers": ["10", "11", "12", "13"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 20 ÷ 5?",
+        "answers": ["3", "4", "5", "6"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 7 + 6?",
+        "answers": ["12", "13", "14", "15"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 14 - 9?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 3 × 3?",
+        "answers": ["6", "7", "8", "9"],
+        "correct": 3
+    },
+    {
+        "question": "Was ist 18 ÷ 2?",
+        "answers": ["6", "7", "8", "9"],
+        "correct": 3
+    },
+    {
+        "question": "Was ist 12 + 5?",
+        "answers": ["16", "17", "18", "19"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 11 - 6?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 5 × 4?",
+        "answers": ["15", "20", "25", "30"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 24 ÷ 6?",
+        "answers": ["3", "4", "5", "6"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 9 + 4?",
+        "answers": ["12", "13", "14", "15"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 17 - 8?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 2 × 6?",
+        "answers": ["10", "11", "12", "13"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 16 ÷ 4?",
+        "answers": ["3", "4", "5", "6"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 8 + 9?",
+        "answers": ["15", "16", "17", "18"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 13 - 5?",
+        "answers": ["6", "7", "8", "9"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 7 × 3?",
+        "answers": ["18", "19", "20", "21"],
+        "correct": 3
+    },
+    {
+        "question": "Was ist 30 ÷ 5?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 10 + 6?",
+        "answers": ["14", "15", "16", "17"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 20 - 11?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 4 × 5?",
+        "answers": ["15", "18", "20", "22"],
+        "correct": 2
+    },
+    {
+        "question": "Was ist 25 ÷ 5?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 1
+    },
+    {
+        "question": "Was ist 9 + 8?",
+        "answers": ["15", "16", "17", "18"],
+        "correct": 2
+    }
+]
+
