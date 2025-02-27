@@ -9,7 +9,7 @@ import random
 TOKEN = "DEIN_BOT_TOKEN"
 GUILD_ID = 123456789012345678  # Ersetze mit deiner Server-ID
 LEVEL_UP_CHANNEL_ID = 123456789012345678  # ID des Channels für Level-Up-Nachrichten
-QUIZ_CHANNEL_ID = 123456789012345678  
+QUIZ_CHANNEL_ID = 123456789012345678
 XP_PER_MESSAGE = 2
 XP_PER_LEVEL = 30
 XP_QUIZ_CORRECT = 10  
@@ -26,6 +26,10 @@ def load_data(file):
         return {}  # Falls die Datei nicht existiert oder leer ist, gib ein leeres Dict zurück
     with open(file, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def save_data_periodically():
+    """Speichert XP-Daten alle 10 Minuten, um Schreiblast zu reduzieren."""
+    save_data(xp_data, DATA_FILE)
 
 def save_data(data, file):
     with open(file, "w", encoding="utf-8") as f:
@@ -62,7 +66,8 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    # Anti-Spam-Schutz: Prüft, ob die Nachricht fast identisch zur letzten ist oder zu kurz
+    await bot.process_commands(message)  # Befehle zuerst verarbeiten
+
     user_id = message.author.id
     content = message.content.strip().lower()
 
@@ -73,17 +78,18 @@ async def on_message(message):
 
     user_last_message[user_id] = (content, time.time())  # Letzte Nachricht speichern
 
-    await bot.process_commands(message)  # Befehle zuerst verarbeiten
-
     level_up = add_xp(user_id, XP_PER_MESSAGE)
-    save_data(xp_data, DATA_FILE)
 
     if level_up:
         channel = bot.get_channel(LEVEL_UP_CHANNEL_ID)
         if channel:
             await channel.send(f"🎉 Glückwunsch {message.author.mention}! Du hast nun das Level {level_up} erreicht! 🎉")
 
-# XP-Verlust bei Inaktivität (wird jede Stunde überprüft)
+@tasks.loop(minutes=10)
+async def periodic_save():
+    save_data_periodically()
+
+# XP-Verlust bei Inaktivität
 @tasks.loop(hours=1)
 async def check_inactivity():
     current_time = time.time()
@@ -100,21 +106,26 @@ async def check_inactivity():
                 data["level"] = new_level
             changed = True
     if changed:
-        save_data(xp_data, DATA_FILE)
+        save_data_periodically()
 
+@bot.event
+async def on_ready():
+    print(f"Bot {bot.user} ist online!")
+    quiz_task.start()
+    check_inactivity.start()
+    periodic_save.start()
+
+# Fehlerbehandlung für Quiz
 class QuizView(nextcord.ui.View):
     def __init__(self, question_data):
         super().__init__(timeout=3600)  # 3600 Sekunden = 1 Stunde
         self.correct_index = question_data["correct"]
-        self.question = question_data["question"]
-        self.answers = question_data["answers"]
-        self.message = None  # Speichert die Nachricht für spätere Bearbeitung
+        self.message = None
 
-        for i, answer in enumerate(self.answers):
+        for i, answer in enumerate(question_data["answers"]):
             self.add_item(QuizButton(label=answer, index=i, correct_index=self.correct_index))
 
     async def on_timeout(self):
-        """Wird nach 1 Stunde aufgerufen, um die Buttons zu deaktivieren."""
         for child in self.children:
             if isinstance(child, nextcord.ui.Button):
                 child.disabled = True
@@ -129,11 +140,10 @@ class QuizButton(nextcord.ui.Button):
 
     async def callback(self, interaction: nextcord.Interaction):
         user_id = str(interaction.user.id)
-
         # Richtige Antwort
         if self.index == self.correct_index:
             add_xp(user_id, XP_QUIZ_CORRECT)
-            save_data(xp_data, DATA_FILE)
+            save_data_periodically()
             await interaction.response.send_message(f"✅ Richtig! {XP_QUIZ_CORRECT} XP wurden dir gutgeschrieben.", ephemeral=True)
         else:
             await interaction.response.send_message("❌ Falsch! Versuch es beim nächsten Mal erneut.", ephemeral=True)
@@ -197,8 +207,11 @@ async def leaderboard(interaction: nextcord.Interaction):
     embed = nextcord.Embed(title="🏆 XP Leaderboard", color=nextcord.Color.gold())
 
     for rank, (user_id, data) in enumerate(sorted_users, start=1):
-        user = await bot.fetch_user(int(user_id))  # Nutzername abrufen
-        embed.add_field(name=f"#{rank} {user.name}", value=f"🆙 Level {data['level']} | ⭐ {data['xp']} XP", inline=False)
+        try:
+            user = await bot.fetch_user(int(user_id))
+        except nextcord.NotFound:
+            user = f"Unbekannter Nutzer ({user_id})"
+        embed.add_field(name=f"#{rank} {user}", value=f"🆙 Level {data['level']} | ⭐ {data['xp']} XP", inline=False)
 
     embed.set_footer(text="© Nexus Gaming | Wer wird die Nummer 1?")
     await interaction.response.send_message(embed=embed)
@@ -230,25 +243,40 @@ async def botinfo(interaction: nextcord.Interaction):
     embed.set_footer(text="© Nexus Gaming | Viel Spaß beim Leveln! 🚀")
     await interaction.response.send_message(embed=embed)
 
-# HIER DEN NEUEN QUIZTEST-BEFEHL EINFÜGEN
+# Fehlerbehandlung für Quiztest
 @bot.slash_command(name="quiztest", description="Startet ein Test-Quiz (nur für Administratoren).", guild_ids=[GUILD_ID])
 async def quiztest(interaction: nextcord.Interaction):
     if not interaction.user.guild_permissions.administrator:
-        await interaction.response.send_message("❌ Du hast keine Berechtigung, diesen Befehl zu nutzen!", ephemeral=True)
+        await interaction.response.send_message("❌ Keine Berechtigung!", ephemeral=True)
         return
-    
-    channel = bot.get_channel(QUIZ_CHANNEL_ID)
-    if not channel or not quiz_data:
-        await interaction.response.send_message("❌ Kein Quiz verfügbar oder Kanal nicht gefunden!", ephemeral=True)
+
+    if not quiz_data or not isinstance(quiz_data, list):
+        await interaction.response.send_message("❌ Kein Quiz verfügbar!", ephemeral=True)
         return
 
     question_data = random.choice(quiz_data)
     embed = nextcord.Embed(title="📜 Test-Quizfrage!", description=question_data["question"], color=nextcord.Color.green())
     view = QuizView(question_data)
-    message = await channel.send(embed=embed, view=view)
+    message = await interaction.channel.send(embed=embed, view=view)
     view.message = message
-    
-    await interaction.response.send_message("✅ Test-Quiz wurde gestartet!", ephemeral=True)
 
-# Bot starten
+    await interaction.response.send_message("✅ Test-Quiz gestartet!", ephemeral=True)
+
+@bot.slash_command(name="addxp", description="Fügt dir XP hinzu (nur für Admins).", guild_ids=[GUILD_ID])
+async def add_xp_command(interaction: nextcord.Interaction, xp_amount: int):
+    if not interaction.user.guild_permissions.administrator:
+        await interaction.response.send_message("❌ Du hast keine Berechtigung, diesen Befehl zu nutzen!", ephemeral=True)
+        return
+
+    user_id = str(interaction.user.id)
+    level_up = add_xp(user_id, xp_amount)
+    save_data(xp_data, DATA_FILE)
+
+    await interaction.response.send_message(f"✅ {xp_amount} XP wurden hinzugefügt!", ephemeral=True)
+
+    if level_up:
+        channel = bot.get_channel(LEVEL_UP_CHANNEL_ID)
+        if channel:
+            await channel.send(f"🎉 Glückwunsch {interaction.user.mention}! Du hast nun das Level {level_up} erreicht! 🎉")
+
 bot.run(TOKEN)
