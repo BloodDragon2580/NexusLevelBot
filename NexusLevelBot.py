@@ -11,8 +11,8 @@ GUILD_ID = 123456789012345678  # Ersetze mit deiner Server-ID
 LEVEL_UP_CHANNEL_ID = 123456789012345678  # ID des Channels für Level-Up-Nachrichten
 QUIZ_CHANNEL_ID = 123456789012345678
 XP_PER_MESSAGE = 2
-XP_PER_LEVEL = 30
-XP_QUIZ_CORRECT = 10  
+XP_PER_LEVEL = 100
+XP_QUIZ_CORRECT = 5  
 MAX_LEVEL = 100
 XP_LOSS_PERCENTAGE = 0.1  # 10% XP-Verlust nach Inaktivität
 INACTIVITY_TIME = 7 * 24 * 60 * 60  # 7 Tage in Sekunden
@@ -118,8 +118,9 @@ async def on_ready():
 # Fehlerbehandlung für Quiz
 class QuizView(nextcord.ui.View):
     def __init__(self, question_data):
-        super().__init__(timeout=3600)  # 3600 Sekunden = 1 Stunde
+        super().__init__(timeout=3600)  # Timeout: 1 Stunde
         self.correct_index = question_data["correct"]
+        self.answered_users = set()  # Speichert IDs der Nutzer, die geantwortet haben
         self.message = None
 
         for i, answer in enumerate(question_data["answers"]):
@@ -128,9 +129,12 @@ class QuizView(nextcord.ui.View):
     async def on_timeout(self):
         for child in self.children:
             if isinstance(child, nextcord.ui.Button):
-                child.disabled = True
+                child.disabled = True  # Alle Buttons deaktivieren
         if self.message:
-            await self.message.edit(view=self)
+            try:
+                await self.message.edit(view=self)
+            except nextcord.errors.NotFound:
+                print("❌ Nachricht wurde gelöscht oder nicht gefunden.")
 
 class QuizButton(nextcord.ui.Button):
     def __init__(self, label, index, correct_index):
@@ -139,8 +143,17 @@ class QuizButton(nextcord.ui.Button):
         self.correct_index = correct_index
 
     async def callback(self, interaction: nextcord.Interaction):
-        user_id = str(interaction.user.id)
-        # Richtige Antwort
+        user_id = interaction.user.id
+
+        # Prüfen, ob der Nutzer schon geantwortet hat
+        if user_id in self.view.answered_users:
+            await interaction.response.send_message("⚠️ Du hast bereits geantwortet!", ephemeral=True)
+            return
+
+        # Nutzer zur Liste hinzufügen
+        self.view.answered_users.add(user_id)
+
+        # Richtige Antwort?
         if self.index == self.correct_index:
             add_xp(user_id, XP_QUIZ_CORRECT)
             save_data_periodically()
@@ -148,11 +161,13 @@ class QuizButton(nextcord.ui.Button):
         else:
             await interaction.response.send_message("❌ Falsch! Versuch es beim nächsten Mal erneut.", ephemeral=True)
 
-        # Buttons deaktivieren nach der ersten Antwort
+        # Nur für diesen Nutzer den Button deaktivieren
         for child in self.view.children:
             if isinstance(child, nextcord.ui.Button):
-                child.disabled = True
-        await self.view.message.edit(view=self.view)
+                child.disabled = False  # Buttons bleiben aktiv!
+
+        # Antwort als Nachricht aktualisieren
+        await interaction.message.edit(view=self.view)
 
 @tasks.loop(minutes=60)
 async def quiz_task():
